@@ -46,9 +46,9 @@ The batch files only install Python packages and are completely safe.
    ```batch
    install.bat
    ```
-3. **Start** the application with `start.bat`
-   ```batch
-   start.bat
+3. **Start** the application with `start.vbs`
+   ```
+   start.vbs
    ```
 
 ### Option 2: Manual Installation
@@ -80,7 +80,7 @@ The `install.bat` script automatically:
 ## 🎮 How to Use
 
 ### Step 1: Start the Application
-- Double-click `start.bat` or run `python isle_map_updater.py`
+- Double-click `start.vbs` (starts silently without CMD window) or run `python isle_map_updater.py`
 
 ### Step 2: Setup Browser & Load Maps
 - Click "Setup Browser & Load Maps" to open vulnona map in Chrome
@@ -136,7 +136,7 @@ the-isle/
 ├── 📦 gui_manager.py               # GUI interface
 ├── 📋 requirements.txt             # Python dependencies
 ├── ⚙️ install.bat                 # Automated installation
-├── 🚀 start.bat                   # Application launcher
+├── 🚀 start.vbs                   # Application launcher (silent)
 └── 📁 compiled/                   # Compiled executable (if available)
 ```
 
