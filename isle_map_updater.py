@@ -124,7 +124,7 @@ class IsleMapUpdater:
 
 def main():
     """Main entry point"""
-    print("🗺️ Isle Map Updater - Starting...")
+    print("Isle Map Updater - Starting...")
     
     try:
         updater = IsleMapUpdater()
