@@ -199,22 +199,41 @@ class BrowserManager:
                         except Exception as status_error:
                             print(f"[DEBUG] Could not get status: {status_error}")
                         
-                        # Create display name with game and status
-                        if label_text:
-                            display_name = f"{label_text} [{game_type}] ({status})"
-                        else:
-                            display_name = f"{map_value} [{game_type}] ({status})"
+                        # Filter out unwanted maps
+                        should_skip = False
                         
-                        maps.append({
-                            'value': map_value,
-                            'label': display_name,
-                            'raw_name': label_text,
-                            'game_type': game_type,
-                            'status': status,
-                            'status_text': status_text,
-                            'element': radio
-                        })
-                        print(f"[MAP] Added: {display_name}")
+                        # Skip Path of Titans maps
+                        if game_type == "Path of Titans":
+                            print(f"[MAP] Skipping Path of Titans map: {label_text}")
+                            should_skip = True
+                        
+                        # Skip outdated maps (those with OUTDATED in name or value)
+                        if ("OUTDATED" in label_text.upper() or 
+                            "OUTDATED" in map_value.upper() or
+                            "SCRAPPED" in label_text.upper() or
+                            "SCRAPPED" in map_value.upper() or
+                            "UNALIVED" in label_text.upper() or
+                            "UNALIVED" in map_value.upper()):
+                            print(f"[MAP] Skipping outdated/inactive map: {label_text}")
+                            should_skip = True
+                        
+                        if not should_skip:
+                            # Create display name - just the map name without status for cleaner look
+                            if label_text:
+                                display_name = label_text
+                            else:
+                                display_name = map_value
+                            
+                            maps.append({
+                                'value': map_value,
+                                'label': display_name,
+                                'raw_name': label_text,
+                                'game_type': game_type,
+                                'status': status,
+                                'status_text': status_text,
+                                'element': radio
+                            })
+                            print(f"[MAP] Added: {display_name}")
                     
                     except Exception as label_error:
                         print(f"[DEBUG] Label parsing failed: {label_error}")
