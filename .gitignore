@@ -1,6 +1,13 @@
 # Claude Code files
 .claude/
 
+# App configuration
+map_config.json
+
+# Module cache
+__pycache__/
+*.pyc
+
 # Python
 __pycache__/
 *.py[cod]

@@ -16,7 +16,7 @@ if %errorlevel% neq 0 (
 )
 
 echo 🔍 Checking for pip...
-pip --version >nul 2>&1
+python -m pip --version >nul 2>&1
 if %errorlevel% neq 0 (
     echo ❌ pip not found! Installing pip...
     python -m ensurepip --upgrade
@@ -29,7 +29,7 @@ if %errorlevel% neq 0 (
 )
 
 echo Installing Python dependencies...
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 if %errorlevel% neq 0 (
     echo ❌ Failed to install Python dependencies!
     pause

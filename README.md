@@ -3,13 +3,13 @@
 A powerful and user-friendly coordinate tracker for **The Isle** that automatically monitors your clipboard for coordinates and updates the [vulnona.com](https://vulnona.com/game/map/) map in real-time.
 
 ![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Python Version](https://img.shields.io/badge/python-3.7+-blue.svg)
+![Python Version](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
 
 ## 🚀 Features
 
 - 📋 **Automatic Clipboard Monitoring** - Detects coordinates copied to clipboard
-- 🌐 **Real-time Map Updates** - Automatically updates vulnova map with your position
+- 🌐 **Real-time Map Updates** - Automatically updates vulnona map with your position
 - 🖥️ **User-friendly GUI** - Simple and intuitive interface
 - 🔧 **Easy Setup** - Automated installation with batch scripts
 - 🎯 **Coordinate Validation** - Ensures only valid Isle coordinates are processed
@@ -18,7 +18,7 @@ A powerful and user-friendly coordinate tracker for **The Isle** that automatica
 
 ## 📋 Requirements
 
-- **Python 3.7+** (automatically checked during installation)
+- **Python 3.10+** (automatically checked during installation)
 - **Google Chrome Browser**
 - **Windows Operating System**
 - **Internet Connection** (for map updates)
@@ -89,7 +89,7 @@ The `install.bat` script automatically:
 3. **Track Coordinates:**
    - Copy coordinates in The Isle (format: `88,879.526, -288,696.11, 21,112.882`)
    - The application automatically detects and processes them
-   - Your position updates on the vulnova map instantly
+   - Your position updates on the vulnona map instantly
 
 4. **Monitor Status:**
    - Watch the GUI for real-time status updates
@@ -104,7 +104,7 @@ The application recognizes **The Isle's native coordinate format**:
 88,879.526, -288,696.11, 21,112.882
 ```
 
-✅ **No conversion needed** - Raw Isle coordinates are passed directly to vulnova.com  
+✅ **No conversion needed** - Raw Isle coordinates are passed directly to vulnona.com  
 ✅ **Maximum accuracy** - Full precision maintained  
 ✅ **Simplified processing** - Direct copy-paste from The Isle
 
@@ -112,12 +112,27 @@ The application recognizes **The Isle's native coordinate format**:
 
 ```
 the-isle/
-├── 📄 README.md              # This file
-├── 🐍 isle_map_updater.py    # Main application
-├── 📋 requirements.txt       # Python dependencies
-├── ⚙️ install.bat           # Automated installation
-├── 🚀 start.bat             # Application launcher
+├── 📄 README.md                    # This file
+├── 🐍 isle_map_updater.py          # Main application (modular architecture)
+├── 📦 config_manager.py            # Configuration handling
+├── 📦 coordinate_parser.py         # Coordinate parsing logic
+├── 📦 browser_manager.py           # Selenium/Browser operations
+├── 📦 gui_manager.py               # GUI interface
+├── 📋 requirements.txt             # Python dependencies
+├── ⚙️ install.bat                 # Automated installation
+├── 🚀 start.bat                   # Application launcher
+└── 📁 compiled/                   # Compiled executable (if available)
 ```
+
+## 🏗️ Modular Architecture
+
+This project uses a clean modular architecture for better maintainability:
+
+- **`config_manager.py`** - Handles JSON configuration, saving/loading user preferences
+- **`coordinate_parser.py`** - Parses and validates Isle coordinates from clipboard
+- **`browser_manager.py`** - Manages Chrome/Selenium operations and vulnona.com interaction
+- **`gui_manager.py`** - Complete GUI interface with tkinter
+- **`isle_map_updater.py`** - Main orchestrator that coordinates all modules
 
 ## 🔧 Configuration
 
