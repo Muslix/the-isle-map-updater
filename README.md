@@ -82,34 +82,35 @@ The `install.bat` script automatically:
 ### Step 1: Start the Application
 - Double-click `start.bat` or run `python isle_map_updater.py`
 
-![Step 1 - Start Application](screenshots/step1_start_app.png)
-
 ### Step 2: Setup Browser & Load Maps
 - Click "Setup Browser & Load Maps" to open vulnona map in Chrome
-- Wait for the browser to open and maps to load automatically
+- Wait for the browser to open and maps to load automatically (takes like 5-10 seconds)
 
-![Step 2 - Setup Browser](screenshots/step2_setup_browser.png)
+<img width="499" height="427" alt="image" src="https://github.com/user-attachments/assets/5df450c1-43c3-4d79-984f-33115ef03290" />
 
 ### Step 3: Select Your Map
 - Choose your desired map from the dropdown menu
 - The map will switch automatically when selected
 - Optionally click "Save as Default" to remember your choice
 
-![Step 3 - Select Map](screenshots/step3_select_map.png)
+<img width="498" height="426" alt="image" src="https://github.com/user-attachments/assets/a12eb25a-0926-45e9-bbfb-0ae3d0c42c1c" />
+
 
 ### Step 4: Track Coordinates
-- Copy coordinates in The Isle (format: `88,879.526, -288,696.11, 21,112.882`)
+- click coordinates in The Isle (format: `88,879.526, -288,696.11, 21,112.882`)
 - The application automatically detects and processes them
 - Your position updates on the vulnona map instantly
 
-![Step 4 - Copy Coordinates](screenshots/step4_copy_coordinates.png)
+<img width="741" height="294" alt="image" src="https://github.com/user-attachments/assets/a1d84907-0a98-4dcc-86f6-6df47b3a7664" />
+
 
 ### Step 5: Monitor Updates
 - Watch the GUI for real-time status updates
 - Green indicators show successful coordinate updates
 - Your position appears on the vulnona map in real-time
 
-![Step 5 - Monitor Updates](screenshots/step5_monitor_updates.png)
+<img width="987" height="728" alt="image" src="https://github.com/user-attachments/assets/b42f743f-0682-4f8f-893e-7c3e4a355418" />
+
 
 ## 📊 Supported Coordinate Formats
 
